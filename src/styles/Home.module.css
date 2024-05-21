@@ -1,3 +1,4 @@
+
 /* zoek component css*/
 .zoekcontainer{
   background-color: rgb(33, 122, 215);
@@ -6,6 +7,11 @@
   width: 100%;
   height: 8rem;
   display: flex;
+}
+.stationLink {
+  text-decoration: none;
+  color: bl;
+  display: block; /* Ensure it spans the whole clickable area */
 }
 
 .zoekbalk{
@@ -43,7 +49,7 @@
 /* navigation component css*/
 
 .navigationContainer{  
-  background-color: #f0f0f0; 
+  background-color: #ffffff; 
   box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
   position: fixed;
@@ -177,7 +183,6 @@
 } 
 .whatsleft{
   display: flex;
-  justify-content: space-between;
   font-size: 14px;
   text-align: center;
 }
@@ -195,6 +200,13 @@
   margin-bottom: 0px;
 }
 
+.fietsen{
+  margin-right: 1.5rem;
+}
+.stationsInfo{
+  width: 60%;
+}
+
 .stationsvisual {
   display: flex;
   align-items: flex-end; /* Align items to the bottom */
@@ -204,4 +216,40 @@
 .visual{
   display: block;
   align-items: end;
+}
+
+.linkstationstyle{
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* aparte pagina station component*/
+
+.aligningContainer{
+  margin: auto;
+  width: 90vw;
+  height: 70vh;
+}
+.stationContainer{
+  background-color: white;
+  width: 90vw;
+  height: 70vh;
+  margin-top: 2rem;
+}
+.visual2{
+  display: block;
+  margin: 0 auto
+}
+.stationNumber{
+  font-weight: bold;
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+.stationName{
+  font-size: 23px;
+  font-weight: bold;
+  margin-left: 15px;
+  margin-top: 0px;
+
 }

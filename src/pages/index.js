@@ -3,21 +3,68 @@ import { Inter } from "next/font/google";
 import ZoekContainer from "@/components/ZoekContainer.jsx";
 import Navigation from "@/components/navigation.jsx";
 import Korting from "@/components/korting.jsx";
-import {useState} from "react";
+import { useState, useEffect } from "react";
 import useNetwork from "@/data/network.js";
 import NearbyFav from "@/components/nearby_fav";
 import Stations from "@/components/stations";
+import { calculateDistance } from "@/pages/distanceCalculator";
 import Link from 'next/link';
+import styles from "@/styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-      const { network, isLoading, isError } = useNetwork()
 
-      if (isLoading) return <div>Loading...</div>
-      if (isError) return <div>Error</div>
 
-      const stations = network.stations;
+  const [userLocation, setUserLocation] = useState(null);
+  const { network, isLoading, isError } = useNetwork();
+
+  useEffect(() => {
+    // Function to get user's location
+    const getUserLocation = () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          position => {
+            const { latitude, longitude } = position.coords;
+            setUserLocation({ latitude, longitude });
+          },
+          error => {
+            console.error('Error getting user location:', error);
+          }
+        );
+      } else {
+        console.error('Geolocation is not supported by this browser.');
+      }
+    };
+
+    getUserLocation(); // Call the function to get user's location
+  }, []); // Run once on component mount
+
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error</div>;
+
+  let stations = network.stations;
+
+  // Sort stations based on distance from user's location
+  if (userLocation) {
+    stations = stations.sort((a, b) => {
+      const distanceA = calculateDistance(userLocation.latitude, userLocation.longitude, a.latitude, a.longitude);
+      const distanceB = calculateDistance(userLocation.latitude, userLocation.longitude, b.latitude, b.longitude);
+      return distanceA - distanceB;
+    });
+  }
+  
+  // Function to format distance
+  function formatDistance(distance) {
+    if (distance < 1) {
+      // Convert distance to meters and round to nearest integer
+      return `${Math.round(distance * 1000)} meters`;
+    } else {
+      // Display distance in kilometers with one decimal place
+      return `${distance.toFixed(1)} km`;
+    }
+  }
+
   return (
     <>
       <Head>
@@ -30,18 +77,18 @@ export default function Home() {
         <Korting />
         <Navigation />
         <NearbyFav />
-        <Stations straatnaam="Ellerman 19" afstand="15" fietsen="11" slots="25"/>
-        <Stations straatnaam="Ellerman 19" afstand="15" fietsen="11" slots="25"/>
-        <Stations straatnaam="Ellerman 19" afstand="15" fietsen="11" slots="25"/>
-        <div>
-          {stations.map(station => <p key={station.id}>{station.name}</p>)}
-        </div>
+        {stations.map(station => (
+          <Link className={styles.linkstationstyle} key={station.id} href={`/stations/${station.id}`} passHref>
+            <Stations
+              straatnaam={station.name}
+              afstand={userLocation ? formatDistance(calculateDistance(userLocation.latitude, userLocation.longitude, station.latitude, station.longitude)) : ''}
+              fietsen={station.free_bikes}
+              slots={station.empty_slots}
+            />
+        </Link>
+        ))}
       </main>
-
-      
-
-
-    
     </>
   );
 }
+

@@ -1,5 +1,7 @@
 import styles from "@/styles/Home.module.css";
 import Image from "next/image";
+import { calculateDistance } from "@/pages/distanceCalculator";
+import useNetwork from "@/data/network.js";
 
 export default function Stations(props) {
     return(
@@ -14,7 +16,7 @@ export default function Stations(props) {
             width={14}
             height={15}
             />
-            <p className={styles.distanceText}> {props.afstand} km</p>
+            <p className={styles.distanceText}> {props.afstand}</p>
             </div>
 
             <div className={styles.whatsleft}>
