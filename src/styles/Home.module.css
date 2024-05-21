@@ -1,3 +1,4 @@
+/* zoek component css*/
 .zoekcontainer{
   background-color: rgb(33, 122, 215);
   position: relative;
@@ -39,6 +40,8 @@
   color: rgb(128, 128, 128);
 }
 
+/* navigation component css*/
+
 .navigationContainer{  
   background-color: #f0f0f0; 
   box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
@@ -49,7 +52,6 @@
 }
 
 .navigation {
-
   margin-left: 8%;
   margin-right: 8%;
   display: flex;
@@ -58,5 +60,56 @@
 
 }
 
+/* korting component css*/
+
+.kortingContainer{
+  background-color: rgb(203, 229, 249);
+  height: 8.5rem;
+  width: 90vw;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  
+}
+
+.smallText{
+  font-size: 14px;
+  margin-left: 15px;
+  font-weight: bold;
+  color: rgb(100, 100, 100);
+  
+}
+.text{
+  font-weight: 800;
+  margin-left: 15px;
+  line-height: 0rem;
+  margin-bottom: 2.8rem;
+}
 
 
+.beurtenContainer{
+  display: flex;
+  justify-content: space-between;
+  line-height: 0.05rem;
+}
+
+.progressbarContainer{
+  width: 75vw;
+}
+
+.progressbar {
+  margin-left: 10%;
+  background-image: linear-gradient(to right, royalblue 70%, white 70%);
+  width: 100%;
+  height: 8px;
+  border-radius: 3px;
+
+}
+
+.progressIcon {
+  position: absolute; /* Position the progressIcon absolutely */
+  top: 12.5rem; /* Adjust this value to your preference */
+  left: 65%; /* Adjust this value to position it above the 65% mark */
+  transform: translateX(-50%); /* Center the icon horizontally */
+}

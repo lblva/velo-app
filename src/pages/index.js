@@ -3,10 +3,19 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import ZoekContainer from "@/components/ZoekContainer.jsx";
 import Navigation from "@/components/navigation.jsx";
+import Korting from "@/components/korting.jsx";
+import {useState} from "react";
+import useNetwork from "@/data/network.js";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+      const { network, isLoading, isError } = useNetwork()
+
+      if (isLoading) return <div>Loading...</div>
+      if (isError) return <div>Error</div>
+
+      const stations = network.stations;
   return (
     <>
       <Head>
@@ -16,9 +25,17 @@ export default function Home() {
       </Head>
       <main>
         <ZoekContainer />
-        <p>some main contect</p>
+        <Korting />
         <Navigation />
+        <div>
+          {stations.map(station => <p key={station.id}>{station.name}</p>)}
+        </div>
       </main>
+
+      
+
+
+    
     </>
   );
 }
