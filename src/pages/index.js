@@ -1,11 +1,13 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import ZoekContainer from "@/components/ZoekContainer.jsx";
 import Navigation from "@/components/navigation.jsx";
 import Korting from "@/components/korting.jsx";
 import {useState} from "react";
 import useNetwork from "@/data/network.js";
+import NearbyFav from "@/components/nearby_fav";
+import Stations from "@/components/stations";
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +29,10 @@ export default function Home() {
         <ZoekContainer />
         <Korting />
         <Navigation />
+        <NearbyFav />
+        <Stations straatnaam="Ellerman 19" afstand="15" fietsen="11" slots="25"/>
+        <Stations straatnaam="Ellerman 19" afstand="15" fietsen="11" slots="25"/>
+        <Stations straatnaam="Ellerman 19" afstand="15" fietsen="11" slots="25"/>
         <div>
           {stations.map(station => <p key={station.id}>{station.name}</p>)}
         </div>

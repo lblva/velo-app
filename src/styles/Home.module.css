@@ -70,7 +70,10 @@
   margin: 0 auto;
   margin-top: 1.5rem;
   border-radius: 8px;
-  
+}
+
+.korting{
+  width: 100%;
 }
 
 .smallText{
@@ -80,8 +83,16 @@
   color: rgb(100, 100, 100);
   
 }
+.smallTextRight{
+  font-size: 14px;
+  margin-right: 15px;
+  font-weight: bold;
+  color: rgb(100, 100, 100);
+  
+}
 .text{
-  font-weight: 800;
+  font-weight: bold;
+  font-size: 17px;
   margin-left: 15px;
   line-height: 0rem;
   margin-bottom: 2.8rem;
@@ -112,4 +123,85 @@
   top: 12.5rem; /* Adjust this value to your preference */
   left: 65%; /* Adjust this value to position it above the 65% mark */
   transform: translateX(-50%); /* Center the icon horizontally */
+}
+
+
+/* nearby_fav component*/
+.h1{
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-left: 20px;
+
+}
+
+.nearbyfavContainer{
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  justify-content: space-between;
+}
+
+.favoriteIcon{
+  margin: auto;
+  margin-right: 20px;
+}
+
+/* stations component*/
+
+.stationsContainer{
+  background-color: white;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.distance{
+  display: flex;
+ 
+}
+.straatnaam{
+  font-weight: bold;
+  margin-top: 1px;
+  margin-bottom: 10px;
+}
+
+.distanceText{
+  font-size: 14px;
+  margin: auto;
+  margin-left: 5px;
+  font-weight: bold;
+  color: rgb(128, 128, 128);
+  
+} 
+.whatsleft{
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  text-align: center;
+}
+.whatsleftLargeText{
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  font-family:  'Roboto', sans-serif;
+}
+.whatsleftSmallText{
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.stationsvisual {
+  display: flex;
+  align-items: flex-end; /* Align items to the bottom */
+  margin: -13px;
+}
+
+.visual{
+  display: block;
+  align-items: end;
 }

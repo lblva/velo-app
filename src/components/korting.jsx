@@ -24,7 +24,7 @@ export default function Korting() {
 
                     <div className={styles.beurtenContainer}>
                         <p className={styles.smallText}>3 beurten</p>
-                        <p className={styles.smallText}>5 beurten</p>
+                        <p className={styles.smallTextRight}>5 beurten</p>
                     </div>
                 </div>
             </div>
