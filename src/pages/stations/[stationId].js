@@ -39,22 +39,44 @@ export default function StationDetails() {
       <ZoekContainer />
       <div className={styles.aligningContainer}>
         <div className={styles.stationContainer}>
-
+          <Link className={styles.gobackArrow} href="/">
+          <Image
+            src="/arrowIcon.png"
+            alt="home Icon"
+            width={20}
+            height={16}
+            />
+          </Link>
           <Image
             src="/visual2.png"
             alt="home Icon"
             className={styles.visual2}
-            width={338}
-            height={340}
+            width={375}
+            height={350}
           />
 
           <p className={styles.stationNumber} >station {numericPart}</p>
           <p className={styles.stationName} >{textPart}</p>
-          <p>Free bikes: {station.free_bikes}</p>
-          <p>Empty slots: {station.empty_slots}</p>
-          <Link href="/">Back to Home</Link>
+
+          <div className={styles.bikesSlotsContainer}>
+            <div className={styles.bikesContainer}>
+              <p className={styles.fietsenNum}>{station.free_bikes}</p>
+              <p className={styles.fietsenText}>fietsen </p>
+            </div>
+
+            <div className={styles.bikesContainer}>
+              <p className={styles.fietsenNum}>{station.empty_slots}</p>
+              <p className={styles.fietsenText}>slots </p>
+            </div>
+          </div>
+
+          
+          
 
         </div>
+        <div className={styles.startrouteContainer}>
+            <p className={styles.startroute}>start route</p>
+          </div>
       </div>
       <Navigation />
     </>
