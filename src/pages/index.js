@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import useNetwork from "@/data/network.js";
 import NearbyFav from "@/components/nearby_fav";
 import Stations from "@/components/stations";
-import { calculateDistance } from "@/pages/distanceCalculator";
+import { calculateDistance } from "@/utils/distanceCalculator";
 import Link from 'next/link';
 import styles from "@/styles/Home.module.css";
 
