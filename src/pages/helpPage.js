@@ -1,4 +1,4 @@
-import Header from "@/components/Header.jsx";
+import Header from "@/components/header.jsx";
 import Navigation from "@/components/navigation.jsx";
 
 export default function HelpPage() {

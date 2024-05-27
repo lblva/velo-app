@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import Header from "@/components/Header.jsx";
+import Header from "@/components/header.jsx";
 import Navigation from "@/components/navigation.jsx";
 import Korting from "@/components/korting.jsx";
 import { useState, useEffect } from "react";
