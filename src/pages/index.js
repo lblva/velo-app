@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import ZoekContainer from "@/components/ZoekContainer.jsx";
+import Header from "@/components/Header.jsx";
 import Navigation from "@/components/navigation.jsx";
 import Korting from "@/components/korting.jsx";
 import { useState, useEffect } from "react";
@@ -74,7 +74,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className={styles.mainContainer}>
-        <ZoekContainer />
+        <Header />
         <Korting />
         <Navigation />
         <NearbyFav />

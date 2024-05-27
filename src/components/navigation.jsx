@@ -17,7 +17,7 @@ export default function Navigation()
                         />
                     </Link>
                     
-                    <Link href="/">
+                    <Link href="/helpPage">
                         <Image
                         src="/helpIcon.png"
                         alt="help Icon"
@@ -27,7 +27,7 @@ export default function Navigation()
                         />
                     </Link>
 
-                    <Link href="/">
+                    <Link href="/accountPage">
                         <Image
                         src="/accountIcon.png"
                         alt="account Icon"
@@ -37,7 +37,7 @@ export default function Navigation()
                         />
                     </Link>
 
-                    <Link href="/">
+                    <Link href="/meerPage">
                         <Image
                         src="/moreIcon.png"
                         alt="more Icon"

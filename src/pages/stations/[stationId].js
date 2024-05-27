@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import useNetwork from '@/data/network';
 import Link from 'next/link';
-import ZoekContainer from "@/components/ZoekContainer.jsx";
+import Header from "@/components/header.jsx";
 import Navigation from "@/components/navigation.jsx";
 import styles from "@/styles/Home.module.css";
 import Image from "next/image";
@@ -36,7 +36,7 @@ export default function StationDetails() {
 
   return (
     <>
-      <ZoekContainer />
+      <Header />
       <div className={styles.aligningContainer}>
         <div className={styles.stationContainer}>
           <Link className={styles.gobackArrow} href="/">
@@ -51,7 +51,7 @@ export default function StationDetails() {
             src="/visual2.png"
             alt="home Icon"
             className={styles.visual2}
-            width={375}
+            width={338}
             height={350}
           />
 
@@ -61,12 +61,12 @@ export default function StationDetails() {
           <div className={styles.bikesSlotsContainer}>
             <div className={styles.bikesContainer}>
               <p className={styles.fietsenNum}>{station.free_bikes}</p>
-              <p className={styles.fietsenText}>fietsen </p>
+              <p className={styles.fietsenText}>fietsen</p>
             </div>
 
             <div className={styles.bikesContainer}>
               <p className={styles.fietsenNum}>{station.empty_slots}</p>
-              <p className={styles.fietsenText}>slots </p>
+              <p className={styles.fietsenText}>slots</p>
             </div>
           </div>
 

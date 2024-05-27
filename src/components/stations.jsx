@@ -16,18 +16,18 @@ export default function Stations(props) {
             width={14}
             height={15}
             />
-            <p className={styles.distanceText}> {props.afstand}</p>
+            <p className={styles.distanceText}>{props.afstand}</p>
             </div>
 
             <div className={styles.whatsleft}>
                 <div className={styles.fietsen}>
-                    <p className={styles.whatsleftLargeText}> {props.fietsen}</p>
-                    <p className={styles.whatsleftSmallText}> fietsen</p>
+                    <p className={styles.whatsleftLargeText}>{props.fietsen}</p>
+                    <p className={styles.whatsleftSmallText}>fietsen</p>
                 </div>
 
                 <div className={styles.slots}>
-                    <p className={styles.whatsleftLargeText}> {props.slots}</p>
-                    <p className={styles.whatsleftSmallText}> slots</p>
+                    <p className={styles.whatsleftLargeText}>{props.slots}</p>
+                    <p className={styles.whatsleftSmallText}>slots</p>
                 </div>
             </div>
 

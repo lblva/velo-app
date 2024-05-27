@@ -42,8 +42,30 @@
   margin-top: 3.8rem;
   margin-left: 10px;
 }
-.greyText{
-  color: rgb(128, 128, 128);
+.input {
+  border: none;
+  outline: none; 
+  width: 15rem;
+  text-decoration: none;
+}
+.results {
+  background-color: white;
+  position: absolute; 
+  z-index: 1000; 
+  width: 60%; 
+  border: 1px solid #ccc; 
+  text-decoration: none;
+}
+
+.resultLink {
+  text-decoration: none !important; 
+  display: block; 
+  padding: 10px; 
+  color: inherit
+}
+
+.resultLink:hover {
+  background-color: #f0f0f0;
 }
 
 /* navigation component css*/
@@ -231,7 +253,7 @@
 .aligningContainer{
   margin: auto;
   width: 90vw;
-  height: 63vh;
+  height: 63%;
 }
 .stationContainer{
   background-color: white;
